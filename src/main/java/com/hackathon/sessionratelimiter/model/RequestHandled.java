@@ -38,4 +38,14 @@ public class RequestHandled {
     public void setRequestTime(String requestTime) {
         this.requestTime = requestTime;
     }
+
+    @Override
+    public String toString() {
+        return "RequestHandled{" +
+                "userId=" + userId +
+                ", requestPath='" + requestPath + '\'' +
+                ", requestType='" + requestType + '\'' +
+                ", requestTime='" + requestTime + '\'' +
+                '}';
+    }
 }

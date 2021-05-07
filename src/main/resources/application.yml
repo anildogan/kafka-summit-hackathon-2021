@@ -40,17 +40,6 @@ ksql:
       username: username
       password: password
 
-#          jaas:
-#            config: org.apache.kafka.common.security.plain.PlainLoginModule   required username='2FVBPWQT5YNVU5V6'   password='uazX4FR72lEBtIhTl4aQW3vEt/toAc74UR54y0+s+yWzmQCcXSeGUFNMJEm2e07c';
-#  kafka:
-#    bootstrap.servers: pkc-zm3p0.eu-north-1.aws.confluent.cloud:9092
-#    security.protocol: SASL_SSL
-#    sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule   required username='2FVBPWQT5YNVU5V6'   password='uazX4FR72lEBtIhTl4aQW3vEt/toAc74UR54y0+s+yWzmQCcXSeGUFNMJEm2e07c';
-#    sasl.mechanism: PLAIN
-#    client.dns.lookup: use_all_dns_ips
-
-#java.se
-
 swagger:
   host:
     url: localhost:8892
