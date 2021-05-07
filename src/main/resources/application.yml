@@ -1,0 +1,68 @@
+spring:
+  main:
+    banner-mode: off
+  application:
+    name: '@project.name@'
+    description: '@project.description@'
+  profiles:
+    active: local
+  kafka:
+    bootstrap-servers: pkc-zm3p0.eu-north-1.aws.confluent.cloud:9092
+    security:
+      protocol: SASL_SSL
+    properties:
+      client:
+        dns:
+          lookup: use_all_dns_ips
+      sasl:
+        mechanism: PLAIN
+        jaas:
+          config: org.apache.kafka.common.security.plain.PlainLoginModule   required username='username'   password='password';
+      schema:
+        registry:
+          url: https://psrc-yoz1k.eu-central-1.aws.confluent.cloud
+      basic:
+        auth:
+          credentials:
+            source: USER_INFO
+          user:
+            info: username:password
+
+
+feign:
+  client:
+    ksql:
+      url: https://pksqlc-w57vm.eu-north-1.aws.confluent.cloud
+
+ksql:
+  proxy:
+    authentication:
+      username: username
+      password: password
+
+#          jaas:
+#            config: org.apache.kafka.common.security.plain.PlainLoginModule   required username='2FVBPWQT5YNVU5V6'   password='uazX4FR72lEBtIhTl4aQW3vEt/toAc74UR54y0+s+yWzmQCcXSeGUFNMJEm2e07c';
+#  kafka:
+#    bootstrap.servers: pkc-zm3p0.eu-north-1.aws.confluent.cloud:9092
+#    security.protocol: SASL_SSL
+#    sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule   required username='2FVBPWQT5YNVU5V6'   password='uazX4FR72lEBtIhTl4aQW3vEt/toAc74UR54y0+s+yWzmQCcXSeGUFNMJEm2e07c';
+#    sasl.mechanism: PLAIN
+#    client.dns.lookup: use_all_dns_ips
+
+#java.se
+
+swagger:
+  host:
+    url: localhost:8892
+    protocol: http
+  version: '@version@'
+
+server:
+  port: 8892
+  compression:
+    enabled: true
+    mime-types: application/json,application/xml,text/html,text/xml,text/plain
+  error:
+    whitelabel:
+      enabled: false
+
